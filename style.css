@@ -34,26 +34,23 @@ ul {
     justify-content: left;
     padding: 0;
     margin: 0;
-
 }
 
 ul li {
     float: left;
-
 }
 
 ul li a {
     display: block;
-
 }
 
-.menu > ul {
+.menu>ul {
     width: 100%;
     height: 100%;
     background-color: #465c71;
 }
 
-.menu > li {
+.menu>li {
     position: relative;
     border: 2px solid #2e3f52;
     flex: 1 1 auto;
@@ -61,7 +58,7 @@ ul li a {
     min-width: 150px;
 }
 
-.menu > li > a {
+.menu>li>a {
     display: flex;
     color: #dde4ec;
     text-align: left;
@@ -70,7 +67,7 @@ ul li a {
     width: 100%;
 }
 
-.menu > li > a:hover {
+.menu>li>a:hover {
     color: #465c71;
     background-color: #bfcbd6;
 }
@@ -114,8 +111,30 @@ ul li a {
     text-decoration: none;
 }
 
+.menu_hidden {
+    display: none;
+    padding: 0.25rem 0.75rem;
+    background: none;
+    border: 1px solid black;
+}
+
+@media (max-width:800px) {
+    .menu {
+        display: none;
+    }
+
+    .menu_hidden {
+        display: block;
+    }
+
+    .menu_hidden:focus+.menu {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 /* table */
-.box {
+.container {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
@@ -130,6 +149,8 @@ ul li a {
     margin: 0;
     padding: 0;
     border-collapse: collapse;
+    align-items: center;
+    justify-content: center;
 }
 
 .table> :not(caption)>*>* {
@@ -141,4 +162,109 @@ ul li a {
 
 thead {
     background-color: #b0b2b5;
+}
+
+/* Form */
+.form {
+    margin-top: 20px;
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
+
+    @media (min-width: 601px) and (max-width: 1024px) {
+        width: 80%;
+    }
+
+    @media (min-width: 1025px) {
+        width: 60%;
+    }
+}
+
+fieldset {
+    border: 2px solid black;
+    padding: 15px;
+    padding-top: 20px;
+}
+
+.form label {
+    padding-left: 10px;
+    width: 20%;
+
+    @media (max-width: 800px) {
+        width: 40%;
+    }
+}
+
+.form div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form input {
+    display: block;
+    flex: 1;
+    width: 100%;
+    padding: 4px;
+}
+
+.form select {
+    display: flex;
+    flex: 1;
+}
+
+.form button {
+    display: block;
+    justify-self: end;
+    margin-top: 20px;
+    width: 70px;
+    height: 25px;
+}
+
+.form-check-radio {
+    margin-bottom: 10px;
+    margin-right: 20px;
+
+}
+
+.form-check-radio label {
+    margin-left: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+#customAlert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-content {
+    background: #ffffff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px 40px;
+    text-align: center;
+    min-width: 260px;
+}
+
+.alert-content p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.alert-content button {
+    margin-top: 15px;
+    padding: 6px 20px;
+    font-size: 14px;
+    background-color: #465c71;
+    color: white;
+    border-radius: 5px;
 }

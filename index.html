@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Manager</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <nav>
+        <button class="menu_hidden">
+            MENU
+        </button>
         <ul class="menu">
             <li><a href="#"> Thông báo</a></li>
             <li><a href="#">Chương trình đào tạo</a></li>
@@ -28,8 +34,9 @@
         </ul>
     </nav>
 
-    <div class="box">
-        <table class="table">
+    <div class="container">
+        <!-- table -->
+        <table class="table" id="table_1">
             <thead>
                 <td>ID</td>
                 <td>Name</td>
@@ -38,13 +45,106 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
+                    <td>1</td>
+                    <td>Son Vu</td>
+                    <td>Tu Dai Ac Nhan</td>
+                    <td><button class="showBtn">Show</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nhan Hoang</td>
+                    <td>Tu Dai Ac Nhan</td>
+                    <td><button class="showBtn">Show</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Anh Le</td>
+                    <td>Tam Ninh Huyen Thoai</td>
+                    <td><button class="showBtn">Show</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Phuc Pham</td>
+                    <td>Tam Ninh Huyen Thoai</td>
+                    <td><button class="showBtn">Show</button></td>
                 </tr>
             </tbody>
         </table>
+        <!-- form1 -->
+        <form id="form1" class="form" action="#">
+            <fieldset>
+                <legend>Form</legend>
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="Nhập tên">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Nhập họ">
+                </div>
+                <div class="form-group">
+                    <label>Year old</label>
+                    <input type="number" name="yearOld" id="yearOld" placeholder="Nhập tuổi">
+                </div>
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="date" name="startDate" id="startDate">
+                </div>
+                <div class="form-group">
+                    <label>Phone number</label>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Nhập số điện thoại">
+                </div>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+
+
+        <!-- form2 -->
+        <div class="form">
+            <fieldset>
+                <legend>Form</legend>
+                <div>
+                    <label for="">First Name</label>
+                    <input type="text" id="firstName1" placeholder="Nhập tên">
+                </div>
+                <div>
+                    <label for="">Last name</label>
+                    <input type="text" id="lastName1" placeholder="Nhập họ">
+                </div>
+                <div>
+                    <label for="">Sex</label>
+                    <div class="form-check-radio">
+                        <input type="radio" id="radioMale" name="sexRadio">
+                        <label for="">Male</label>
+                    </div>
+                    <div class="form-check-radio">
+                        <input type="radio" id="radioFemale" name="sexRadio">
+                        <label for="">Female</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="">Nationality</label>
+                    <select name="" id="nationality1">
+                        <option value="Australia">Australia</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="United State">United State</option>
+                        <option value="Viet Nam">Viet Nam</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Full Name</label>
+                    <label id="fullName"></label>
+                </div>
+                <div>
+                    <label for="">Sex</label>
+                    <label id="sex"></label>
+                </div>
+                <div>
+                    <label for="">Nationality</label>
+                    <label id="nationality"></label>
+                </div>
+            </fieldset>
+        </div>
     </div>
 
 </body>
